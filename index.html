@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Tacos &amp; JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.css" />
+    <style media="screen">
+      .scroll {
+        overflow-y: scroll;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="row">
+      <!-- header -->
+      <header class="col s12 center orange">
+        <h3 class="text-white">Tech Talent South Taqueria</h3>
+      </header>
+
+      <!-- tacos list -->
+      <aside class="col s12 l4 green">
+        <header class="col s12">
+          <h5>Tacos (<span id="numberOfTacos"></span>)</h5>
+        </header>
+        <section class="col s12">
+          <ul class="scroll">
+            <li class="taco-menu-item card">
+              <div class="card-content">
+                <h6 class="card-title">Carnitas</h6>
+                <p>
+                  Braised pork. <b>$1.75</b>
+                </p>
+              </div>
+            </li>
+            <li class="taco-menu-item card">
+              <div class="card-content">
+                <h6 class="card-title">Fish</h6>
+                <p>
+                  Fresh caught. <b>$1.75</b>
+                </p>
+              </div>
+            </li>
+            <li class="taco-menu-item card">
+              <div class="card-content">
+                <h6 class="card-title">Cecina</h6>
+                <p>
+                  Salty steak. <b>$1.75</b>
+                </p>
+              </div>
+            </li>
+            <li class="taco-menu-item card">
+              <div class="card-content">
+                <h6 class="card-title">Al Pastor</h6>
+                <p>
+                  Marinated pork with pineapple. <b>$1.75</b>
+                </p>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </aside>
+
+      <!-- order printout -->
+      <main class="col s8 scroll">
+        <div class="col s12">
+          <h5>Order #1 - <span id="total"></span></h5>
+          <h6 id="date"></h6>
+        </div>
+        <ul id="receipt"></ul>
+      </main>
+    </div>
+
+    <script src="taco.js"></script>
+  </body>
+</html>
