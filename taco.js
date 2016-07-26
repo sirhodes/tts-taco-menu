@@ -6,8 +6,6 @@ var currentDate = new Date();
 changeInnerHTML(dateElement, currentDate);
 
 var receipt = document.getElementById('receipt');
-var totalSpan = document.getElementById('total');
-changeInnerHTML(totalSpan, 1.91);
 
 function currencyFormatter(currency) {
   return '$' + currency;
@@ -63,22 +61,43 @@ function printContentsOf(obj) {
 var softShellTacoProperties = {
   menuDescription: 'Delicious starting point. ',
   menuTitle: 'Soft Shell Taco',
-  ingredients: ['cheese', 'meat', 'sour cream'],
-  shell: 'soft',
   price: 2.99
 };
 
-softShellTaco = createNewTaco(softShellTacoProperties);
-softShellTacoInMarkup = createTacoInMarkup(softShellTaco);
 
-var tacos = [softShellTacoInMarkup];
+var softShellTaco = createNewTaco(softShellTacoProperties);
+var softShellTacoInMarkup = createTacoInMarkup(softShellTaco);
+
+var carnitasProperties = {
+  menuDescription: 'Local braised pork goodness. ',
+  menuTitle: 'Carnitas',
+  price: 3.99
+};
+
+var carnitasTaco = createNewTaco(carnitasProperties);
+var carnitasTacoInMarkup = createTacoInMarkup(carnitasTaco);
+
+var lenguaProperties = {
+  menuDescription: 'Beef tongue. ',
+  menuTitle: 'Lengua',
+  price: 3.49
+};
+
+var lenguaTaco = createNewTaco(lenguaProperties);
+var lenguaTacoInMarkup = createTacoInMarkup(lenguaTaco);
+
+
+var tacos = [
+  softShellTacoInMarkup,
+  carnitasTacoInMarkup,
+  lenguaTacoInMarkup
+];
 tacos.map(addTacoToReceipt);
-// addTacoToReceipt(softShellTacoInMarkup);
+
+// we'll change the HTML of an element without creating a variable for it
+changeInnerHTML(document.getElementById('numberOfTacos'), tacos.length);
 
 // helper function to change the HTML of an element.
 function changeInnerHTML(element, contents) {
   element.innerHTML = contents;
 }
-
-// we'll change the HTML of an element without creating a variable for it
-changeInnerHTML(document.getElementById('numberOfTacos'), tacos.length);
